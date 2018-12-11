@@ -209,14 +209,19 @@ def problem2b(rect, n, delta, win):
     center = rect.get_center()
     height = rect.get_height()
     width = rect.get_width()
+    cor1x = (center.x - (width / 2))
+    cor1y = (center.y - (height / 2))
+
+    cor2x = (center.x + (width / 2))
+    cor2y = (center.y + (height / 2))
 
     for k in range(n - 1):
-        cor1x = (center.x - width) / 2 - (k + 1) * delta
-        cor1y = (center.y -height) / 2 - (k + 1) * delta
+        cor1x = cor1x - delta
+        cor1y = cor1y - delta
         cor1 = rg.Point(cor1x,cor1y)
 
-        cor2x = (center.x - width) / 2 - (k + 1) * delta
-        cor2y = (center.y - height) / 2 - (k + 1) * delta
+        cor2x = cor2x + delta
+        cor2y = cor2y + delta
         cor2 = rg.Point(cor2x, cor2y)
 
         rectangle = rg.Rectangle(cor1, cor2)
